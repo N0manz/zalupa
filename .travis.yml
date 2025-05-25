@@ -1,0 +1,15 @@
+# .travis.yml
+
+language: cpp
+
+os:
+  - linux
+
+compilers:
+  - gcc
+  - clang
+
+script:
+  - mkdir build && cd build
+  - cmake ..
+  - make
