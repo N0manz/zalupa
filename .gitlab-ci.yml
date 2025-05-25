@@ -1,0 +1,31 @@
+
+stages:
+  - build
+
+variables:
+  GCC_IMAGE: "gcc:latest"
+  CLANG_IMAGE: "clang:latest"
+
+build:gcc:
+  stage: build
+  image: $GCC_IMAGE
+  script:
+    - mkdir -p build
+    - cd build
+    - cmake ..
+    - make
+  artifacts:
+    paths:
+      - build/
+
+build:clang:
+  stage: build
+  image: $CLANG_IMAGE
+  script:
+    - mkdir -p build
+    - cd build
+    - cmake ..
+    - make
+  artifacts:
+    paths:
+      - build/
