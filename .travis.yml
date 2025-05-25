@@ -5,11 +5,16 @@ language: cpp
 os:
   - linux
 
+dist: focal
+
 compilers:
   - gcc
   - clang
 
-script:
-  - mkdir build && cd build
+before_script:
+  - mkdir build
+  - cd build
   - cmake ..
+
+script:
   - make
